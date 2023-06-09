@@ -21,6 +21,8 @@ public class Cell : MonoBehaviour
 
     public Vector2Int pos;
 
+    public ModelGrid modelGrid;
+
     private void Start()
     {
 

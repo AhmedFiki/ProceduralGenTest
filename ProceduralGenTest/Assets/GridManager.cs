@@ -20,6 +20,7 @@ public class GridManager : MonoBehaviour
     [Header("Collapse")]
     public Vector2Int collapseCell;
 
+    
     private void Awake()
     {
         Instance = this;

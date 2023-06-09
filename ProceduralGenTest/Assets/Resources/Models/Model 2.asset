@@ -17,4 +17,4 @@ MonoBehaviour:
   bottomNeighbors: 03000000060000000700000002000000
   rightNeighbors: 05000000070000000800000009000000
   leftNeighbors: 04000000060000000800000009000000
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: c60f8fa045ed0f3439dcd0188b30aeea, type: 3}
