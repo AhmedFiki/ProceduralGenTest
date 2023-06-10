@@ -162,7 +162,6 @@ public class GridManager : MonoBehaviour
 
        CollapseCell(RandomlyPickCell(minEntropyCells));
     }
-    // Function to get the cells with the minimum entropy
      List<Cell> GetCellsWithMinEntropy(List<Cell> cellList)
     {
         float minEntropy = cellList.Where(cell => cell.GetEntropy() != 0).Min(cell => cell.GetEntropy());

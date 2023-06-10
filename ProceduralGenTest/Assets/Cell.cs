@@ -38,10 +38,7 @@ public class Cell : MonoBehaviour
     }
     public void UpdatePossibleModels(List<int> neighborModel)
     {
-        /*  Debug.Log("1"+neighborModel.Count);
-          Debug.Log("2" + possibleModels.Count);
-          Debug.Log("3" + possibleModels.Intersect(neighborModel).Count());
-          Debug.Log("4" + neighborModel.Intersect(possibleModels).Count());*/
+
 
 
         possibleModels = possibleModels.Intersect(neighborModel).ToList();
@@ -53,7 +50,6 @@ public class Cell : MonoBehaviour
     {
         if (!collapsed)
             entropy = possibleModels.Count / 9f;
-        //Debug.Log("Entropy updated "+entropy);
 
     }
     public float GetEntropy()
@@ -68,22 +64,20 @@ public class Cell : MonoBehaviour
     {
         if (possibleModels.Count < 1)
         {
-            return; // Nothing to delete, or only one element
+            return; 
         }
 
-        int randomIndex = Random.Range(0, possibleModels.Count); // Get a random index
+        int randomIndex = Random.Range(0, possibleModels.Count); 
         Debug.Log("Collapsed cell in: " + pos);
-        //Debug.Log(randomIndex);
-        //Debug.Log(possibleModels.Count);
-        int randomElement = possibleModels[randomIndex]; // Get the random element
 
-        possibleModels.Clear(); // Clear the list
+        int randomElement = possibleModels[randomIndex]; 
 
-        possibleModels.Add(randomElement); // Add the random element back to the list
+        possibleModels.Clear();
+
+        possibleModels.Add(randomElement);
         currentModel = randomElement;
         collapsed = true;
         entropy = 0;
-        // GetComponent<Image>().color = Color.black;
     }
     public void SetImage(Sprite sprite)
     {

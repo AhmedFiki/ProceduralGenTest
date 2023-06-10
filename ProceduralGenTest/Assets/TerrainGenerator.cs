@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour
 {
-    public int width = 100; // Width of the terrain
-    public int length = 100; // Length of the terrain
-    public float scale = 10f; // Scale of the terrain
+    public int width = 100; 
+    public int length = 100; 
+    public int depth = 20;
+    public float scale = 10f;
     public int octaves = 4; // Number of octaves
     public float persistence = 0.5f; // Persistence (impact of each octave)
     public float lacunarity = 2f; // Lacunarity (frequency multiplier between octaves)
-
+    public int smoothingIterations = 3;
     private Terrain terrain;
     private TerrainData terrainData;
     void Start()
@@ -21,11 +22,10 @@ public class TerrainGenerator : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
+       
             terrainData = GenerateTerrainData();
             ApplyTerrainData();
-        }
+        
     }
     void ApplyTerrainData()
     {
@@ -37,15 +37,16 @@ public class TerrainGenerator : MonoBehaviour
         terrain.terrainData = GenerateTerrainData();
     }
 
-    TerrainData GenerateTerrainData()
-    {
-        TerrainData terrainData = new TerrainData();
-        terrainData.heightmapResolution = width + 1;
-        terrainData.size = new Vector3(width, 100, length);
-        terrainData.SetHeights(0, 0, GenerateHeights());
+     TerrainData GenerateTerrainData()
+     {
+         TerrainData terrainData = new TerrainData();
+         terrainData.heightmapResolution = width + 1;
+         terrainData.size = new Vector3(width, depth, length);
+         terrainData.SetHeights(0, 0, GenerateHeights());
 
-        return terrainData;
-    }
+         return terrainData;
+     }
+    
 
     float[,] GenerateHeights()
     {
@@ -80,7 +81,7 @@ public class TerrainGenerator : MonoBehaviour
         }
 
         // Apply smoothing
-        int smoothingIterations = 3;
+        
         for (int i = 0; i < smoothingIterations; i++)
         {
             SmoothHeights(heights);
