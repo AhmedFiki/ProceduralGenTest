@@ -35,10 +35,18 @@ public class GridManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKey(KeyCode.E))
         {
             CollapseRandomCell();
+        }if(Input.GetKey(KeyCode.R))
+        {
+            ResetCells();
         }
+    }
+    public void ResetCells()
+    {
+        InitCells();
+
     }
     public void CollapseCell(Cell cell)
     {
@@ -88,6 +96,7 @@ public class GridManager : MonoBehaviour
         foreach (var cell in cells)
         {
             //cell.SetEntropy(cell.GetPossibleModels().Count / 9);
+            cell.GetComponentInChildren<ModelGrid>().HandleModelGrid();
             if (cell.GetPossibleModels().Count == 1 && !cell.IsCollapsed())
             {
                 CollapseCell(cell);
@@ -115,9 +124,13 @@ public class GridManager : MonoBehaviour
     {
         foreach (Cell cell in cells)
         {
+            cell.SetImage(null);
+            
             cell.InitPossibleModels(9);
 
         }
+        UpdateGrid();
+
     }
     public void Propagate()
     {
@@ -156,12 +169,28 @@ public class GridManager : MonoBehaviour
         }
 
     }
-    void CollapseRandomCell()
+    public void CollapseRandomCell()
     {
+        if(AllCellsCollapsed())
+        {
+            return;
+        }
         List<Cell> minEntropyCells = GetCellsWithMinEntropy(cells);
 
        CollapseCell(RandomlyPickCell(minEntropyCells));
     }
+    bool AllCellsCollapsed()
+    {
+        foreach(Cell cell in cells)
+        {
+            if (!cell.IsCollapsed())
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
      List<Cell> GetCellsWithMinEntropy(List<Cell> cellList)
     {
         float minEntropy = cellList.Where(cell => cell.GetEntropy() != 0).Min(cell => cell.GetEntropy());

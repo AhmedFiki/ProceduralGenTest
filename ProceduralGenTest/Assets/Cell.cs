@@ -35,6 +35,16 @@ public class Cell : MonoBehaviour
 
             possibleModels.Add(i);
         }
+
+        List<int> numbers = new List<int>();
+
+        // Add numbers from 1 to 9 to the list
+        for (int i = 1; i <= 9; i++)
+        {
+            numbers.Add(i);
+        }
+        collapsed = false;
+        UpdatePossibleModels(numbers);
     }
     public void UpdatePossibleModels(List<int> neighborModel)
     {
