@@ -6,11 +6,11 @@ public class TerrainGenerator : MonoBehaviour
 {
     public int width = 100; 
     public int length = 100; 
-    public int depth = 20;
+    public int depth = 20; //amplitude
     public float scale = 10f;
-    public int octaves = 4; // Number of octaves
-    public float persistence = 0.5f; // Persistence (impact of each octave)
-    public float lacunarity = 2f; // Lacunarity (frequency multiplier between octaves)
+    public int octaves = 4; // number of octaves
+    public float persistence = 0.5f; // (impact of each octave)
+    public float lacunarity = 2f; // (frequency multiplier between octaves)
     public int smoothingIterations = 3;
     private Terrain terrain;
     private TerrainData terrainData;

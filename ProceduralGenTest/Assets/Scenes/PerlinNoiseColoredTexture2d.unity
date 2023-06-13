@@ -168,40 +168,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawMode: 1
-  mapWidth: 100
+  mapWidth: 200
   mapHeight: 100
-  noiseScale: 25
+  noiseScale: 40
   octaves: 5
   persistance: 0.5
   lacunarity: 2
   seed: 0
-  offset: {x: 65.95, y: 0}
+  offset: {x: 55, y: 0}
   autoUpdate: 1
   regions:
   - name: Deep Water
-    height: 0.3
-    colour: {r: 0, g: 0.39318058, b: 0.6320754, a: 1}
+    height: 0.33
+    colour: {r: 0, g: 0.41176474, b: 0.6666667, a: 1}
   - name: water
     height: 0.4
-    colour: {r: 0, g: 0.6196079, b: 1, a: 1}
+    colour: {r: 0, g: 0.59607846, b: 0.86274517, a: 1}
   - name: sand
     height: 0.45
-    colour: {r: 0.9846584, g: 1, b: 0.39308167, a: 1}
+    colour: {r: 0.97647065, g: 0.90196085, b: 0.8117648, a: 1}
   - name: grass
     height: 0.55
-    colour: {r: 0.017717425, g: 0.7264151, b: 0, a: 0}
+    colour: {r: 0.3529412, g: 0.7725491, b: 0.30980393, a: 0}
   - name: grass2
     height: 0.6
-    colour: {r: 0.039638795, g: 0.46226418, b: 0.02907317, a: 0}
+    colour: {r: 0.07450981, g: 0.29803923, b: 0.29803923, a: 0}
   - name: Rock
-    height: 0.7
-    colour: {r: 0.4716981, g: 0.3083654, b: 0.21211578, a: 0}
+    height: 0.65
+    colour: {r: 0.6603774, g: 0.43318737, b: 0.32811198, a: 0}
   - name: Rock 2
-    height: 0.9
-    colour: {r: 0.23584908, g: 0.13178281, b: 0.07045804, a: 0}
+    height: 0.95
+    colour: {r: 0.38679248, g: 0.22378364, b: 0.14839207, a: 0}
   - name: Snow
     height: 1
-    colour: {r: 1, g: 1, b: 1, a: 0}
+    colour: {r: 0.7803922, g: 0.8117648, b: 0.86666673, a: 0}
 --- !u!4 &1008436975
 Transform:
   m_ObjectHideFlags: 0
@@ -292,11 +292,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711656484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 100}
+  m_LocalScale: {x: 200, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
