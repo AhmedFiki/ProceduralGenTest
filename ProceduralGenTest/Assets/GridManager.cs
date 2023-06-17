@@ -20,7 +20,7 @@ public class GridManager : MonoBehaviour
     [Header("Collapse")]
     public Vector2Int collapseCell;
 
-    
+    public bool activeModelGrid;
     private void Awake()
     {
         Instance = this;
@@ -30,7 +30,7 @@ public class GridManager : MonoBehaviour
     {
         NumberCells();
         InitCells();
-        CollapseCell(cells[12]);
+      //  CollapseCell(cells[12]);
 
     }
     private void Update()
@@ -96,7 +96,9 @@ public class GridManager : MonoBehaviour
         foreach (var cell in cells)
         {
             //cell.SetEntropy(cell.GetPossibleModels().Count / 9);
+            if(activeModelGrid)
             cell.GetComponentInChildren<ModelGrid>().HandleModelGrid();
+
             if (cell.GetPossibleModels().Count == 1 && !cell.IsCollapsed())
             {
                 CollapseCell(cell);

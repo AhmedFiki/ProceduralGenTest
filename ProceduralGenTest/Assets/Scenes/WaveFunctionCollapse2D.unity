@@ -18681,6 +18681,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f1a1605fd5a0b2143b56d8d8884a0309, type: 2}
   - {fileID: 11400000, guid: 6bf7ae25e80332f40ae6350f81e74807, type: 2}
   collapseCell: {x: 0, y: 0}
+  activeModelGrid: 1
 --- !u!114 &567848958
 MonoBehaviour:
   m_ObjectHideFlags: 0

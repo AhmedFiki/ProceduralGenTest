@@ -175,7 +175,7 @@ MonoBehaviour:
   persistance: 0.5
   lacunarity: 2
   seed: 0
-  offset: {x: 55, y: 0}
+  offset: {x: 37.7, y: 0}
   autoUpdate: 1
   regions:
   - name: Deep Water
@@ -194,14 +194,14 @@ MonoBehaviour:
     height: 0.6
     colour: {r: 0.07450981, g: 0.29803923, b: 0.29803923, a: 0}
   - name: Rock
-    height: 0.65
-    colour: {r: 0.6603774, g: 0.43318737, b: 0.32811198, a: 0}
+    height: 0.67
+    colour: {r: 0.5849056, g: 0.35122362, b: 0.24646962, a: 0}
   - name: Rock 2
-    height: 0.95
-    colour: {r: 0.38679248, g: 0.22378364, b: 0.14839207, a: 0}
+    height: 0.9
+    colour: {r: 0.31132078, g: 0.17718224, b: 0.11650052, a: 0}
   - name: Snow
     height: 1
-    colour: {r: 0.7803922, g: 0.8117648, b: 0.86666673, a: 0}
+    colour: {r: 1, g: 1, b: 1, a: 0}
 --- !u!4 &1008436975
 Transform:
   m_ObjectHideFlags: 0
